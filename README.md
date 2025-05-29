@@ -97,15 +97,26 @@ print_escape
 Place your completed `print.sh` in `solutions/` and commit. Then link it here:
 
 ```
-[print.sh](https://github.com/YOUR_USERNAME/REPO_NAME/blob/main/solutions/print.sh)
+[print.sh](https://github.com/MetinG57/PP6/blob/master/solutions/print.sh)
+[reflection.txt](https://github.com/MetinG57/PP6/blob/master/solutions/reflection.txt)
 ```
 
 #### Reflection Questions
 
 1. **What is the difference between `printf` and `echo` in Bash?**
+```
+- echo ist einfacher, fügt automatisch einen Zeilenumbruch hinzu und kann Escape-Sequenzen inkonsistent behandeln.
+- printf bietet präzise Formatierung mit Spezifizierern (%s, %.1f) und fügt keinen Zeilenumbruch hinzu, außer mit \n.
+```
 2. **What is the role of `~/.bashrc` in your shell environment?**
+```
+- Konfigurationsdatei für interaktive Bash-Shells, definiert Umgebungsvariablen, Aliase und den Prompt.
+```
 3. **Explain the difference between sourcing (`source ~/.bashrc`) and executing (`./print.sh`).**
-
+```
+- Sourcing (source ~/.bashrc) führt das Skript in der aktuellen Shell aus, Änderungen bleiben bestehen.
+- Ausführen (./print.sh) startet eine Subshell, Änderungen beeinflussen die Hauptshell nicht.
+```
 ---
 
 ### Task 2: GAS Printing (32‑bit Linux)
