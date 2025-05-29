@@ -8,3 +8,13 @@
 3. Sourcing vs. Ausführen:
 - Sourcing (source ~/.bashrc) führt das Skript in der aktuellen Shell aus, Änderungen bleiben bestehen.
 - Ausführen (./print.sh) startet eine Subshell, Änderungen beeinflussen die Hauptshell nicht.
+
+Aufgabe 2: GAS Printing
+1. Was ist ein File Descriptor und wie verwendet ihn das Betriebssystem?
+- Ein File Descriptor ist eine Zahl, die eine offene Datei oder Ressource (z. B. stdin, stdout, Dateien) im Betriebssystem identifiziert. Das Betriebssystem verwendet ihn, um Lese- oder Schreiboperationen auf diese Ressource auszuführen. Zum Beispiel ist 1 der File Descriptor für stdout.
+
+2. Wie kann man einen File Descriptor für eine andere Ressource (z. B. Datei oder Socket) erhalten oder duplizieren?
+- Einen neuen File Descriptor erhält man durch Systemaufrufe wie open() für Dateien oder socket() für Netzwerkverbindungen. Duplizieren kann man mit dup() oder dup2(), um einen bestehenden File Descriptor auf eine neue Nummer zu kopieren.
+
+3. Was passiert, wenn man einen ungültigen File Descriptor in einem Systemaufruf verwendet?
+- Ein ungültiger File Descriptor (z. B. nicht geöffnet oder außerhalb des gültigen Bereichs) führt zu einem Fehler, oft mit errno=EBADF (Bad File Descriptor). Das Programm kann abstürzen oder einen Fehlercode zurückgeben.
