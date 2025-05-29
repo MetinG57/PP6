@@ -96,11 +96,10 @@ print_escape
 **Solution Reference**
 Place your completed `print.sh` in `solutions/` and commit. Then link it here:
 
-```
 [print.sh](https://github.com/MetinG57/PP6/blob/master/solutions/print.sh)
 [reflection.txt](https://github.com/MetinG57/PP6/blob/master/solutions/reflection.txt)
 [https://github.com/MetinG57/PP6/blob/master/solutions/print.sh](https://github.com/MetinG57/PP6/blob/master/solutions/print.sh)
-```
+
 
 #### Reflection Questions
 
