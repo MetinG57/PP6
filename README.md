@@ -165,9 +165,8 @@ _start:
 
 **Solution Reference**
 
-```
 [print.s](https://github.com/MetinG57/PP6/blob/master/solutions/print.s)
-```
+
 
 #### Reflection Questions
 
