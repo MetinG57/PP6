@@ -166,14 +166,24 @@ _start:
 **Solution Reference**
 
 ```
-[print.s](https://github.com/YOUR_USERNAME/REPO_NAME/blob/main/solutions/print.s)
+[print.s](https://github.com/MetinG57/PP6/blob/master/solutions/print.s)
 ```
 
 #### Reflection Questions
 
 1. **What is a file descriptor and how does the OS use it?**
+```
+Ein File Descriptor ist eine Zahl, die eine offene Datei oder Ressource (z. B. stdin, stdout, Dateien) im Betriebssystem identifiziert. Das Betriebssystem verwendet ihn, um Lese- oder Schreiboperationen auf diese Ressource auszuführen. Zum Beispiel ist 1 der File Descriptor für stdout.
+```
+
 2. **How can you obtain or duplicate a file descriptor for another resource (e.g., a file or socket)?**
+```
+Einen neuen File Descriptor erhält man durch Systemaufrufe wie open() für Dateien oder socket() für Netzwerkverbindungen. Duplizieren kann man mit dup() oder dup2(), um einen bestehenden File Descriptor auf eine neue Nummer zu kopieren.
+```
 3. **What might happen if you use an invalid file descriptor in a syscall?**
+```
+Ein ungültiger File Descriptor (z. B. nicht geöffnet oder außerhalb des gültigen Bereichs) führt zu einem Fehler, oft mit errno=EBADF (Bad File Descriptor). Das Programm kann abstürzen oder einen Fehlercode zurückgeben.
+```
 
 ---
 
