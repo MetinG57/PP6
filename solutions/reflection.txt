@@ -1,0 +1,10 @@
+1. Unterschied zwischen printf und echo in Bash:
+- echo ist einfacher, fügt automatisch einen Zeilenumbruch hinzu und kann Escape-Sequenzen inkonsistent behandeln.
+- printf bietet präzise Formatierung mit Spezifizierern (%s, %.1f) und fügt keinen Zeilenumbruch hinzu, außer mit \n.
+
+2. Rolle von ~/.bashrc:
+- Konfigurationsdatei für interaktive Bash-Shells, definiert Umgebungsvariablen, Aliase und den Prompt.
+
+3. Sourcing vs. Ausführen:
+- Sourcing (source ~/.bashrc) führt das Skript in der aktuellen Shell aus, Änderungen bleiben bestehen.
+- Ausführen (./print.sh) startet eine Subshell, Änderungen beeinflussen die Hauptshell nicht.
