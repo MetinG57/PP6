@@ -18,3 +18,28 @@ Aufgabe 2: GAS Printing
 
 3. Was passiert, wenn man einen ungültigen File Descriptor in einem Systemaufruf verwendet?
 - Ein ungültiger File Descriptor (z. B. nicht geöffnet oder außerhalb des gültigen Bereichs) führt zu einem Fehler, oft mit errno=EBADF (Bad File Descriptor). Das Programm kann abstürzen oder einen Fehlercode zurückgeben.
+
+
+
+Aufgabe 3: C Printing
+1. Mit objdump -d print_c die Assembler-Anweisungen für printf finden:
+- Mit `objdump -d print_c` hab ich den Assembler-Code angeschaut. In der main()-Funktion sieht man die printf-Aufrufe. Für jeden printf gibt’s push-Befehle, um die Argumente (z. B. "Hallo aus C!" oder 42) auf den Stack zu legen, und dann einen call zu __printf. Die genauen Befehle hängen von der C-Bibliothek ab.
+
+2. Warum ist die Syntax anders als bei GAS? NASM vs. GAS:
+- GAS benutzt AT&T-Syntax, z. B. %eax für Register und movl %ebx, %eax. NASM nutzt Intel-Syntax, wo Register ohne % (z. B. eax) sind und die Reihenfolge umgedreht ist (mov eax, ebx). GAS passt zu Linux-Tools wie gcc, NASM ist oft für eigene Projekte. In objdump seh ich GAS-Syntax, weil gcc GAS verwendet.
+
+3. Wie kann man fprintf nutzen, um auf stdout und in eine Datei zu schreiben? Beispiel:
+- fprintf schreibt in Streams wie stdout oder Dateien. Beispiel:
+  ```c
+  #include <stdio.h>
+  int main(void) {
+      FILE *file = fopen("output.txt", "w");
+      if (file == NULL) {
+          printf("Datei konnte nicht geöffnet werden!\n");
+          return 1;
+      }
+      fprintf(stdout, "Ausgabe auf Bildschirm!\n");
+      fprintf(file, "Ausgabe in Datei!\n");
+      fclose(file);
+      return 0;
+  }
