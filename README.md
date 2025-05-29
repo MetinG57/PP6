@@ -293,3 +293,7 @@ if __name__ == "__main__":
 ---
 
 **Remember:** Stop working after **90 minutes** and document where you stopped.
+```
+Task 1 2 3 abgeschlossen.
+Für Task 4 hat die Zeit nicht ausgereicht.
+```
