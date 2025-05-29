@@ -214,9 +214,9 @@ int main(void) {
 
 **Solution Reference**
 
-```
+
 [print.c](https://github.com/MetinG57/PP6/blob/master/solutions/print.c)
-```
+
 
 #### Reflection Questions
 
