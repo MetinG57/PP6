@@ -215,14 +215,39 @@ int main(void) {
 **Solution Reference**
 
 ```
-[print.c](https://github.com/YOUR_USERNAME/REPO_NAME/blob/main/solutions/print.c)
+[print.c](https://github.com/MetinG57/PP6/blob/master/solutions/print.c)
 ```
 
 #### Reflection Questions
 
 1. **Use `objdump -d` on `print_c` to find the assembly instructions corresponding to your `printf` calls.**
+```
+Mit `objdump -d print_c` hab ich den Assembler-Code angeschaut. In der main()-Funktion sieht man die printf-Aufrufe. Für jeden printf gibt’s push-Befehle, um die Argumente (z. B. "Hallo aus C!" oder 42) auf den Stack zu legen, und dann einen call zu __printf. Die genauen Befehle hängen von der C-Bibliothek ab.
+```
+
 2. **Why is the syntax written differently from GAS assembly? Compare NASM vs. GAS notation.**
+```
+GAS benutzt AT&T-Syntax, z. B. %eax für Register und movl %ebx, %eax. NASM nutzt Intel-Syntax, wo Register ohne % (z. B. eax) sind und die Reihenfolge umgedreht ist (mov eax, ebx). GAS passt zu Linux-Tools wie gcc, NASM ist oft für eigene Projekte. In objdump seh ich GAS-Syntax, weil gcc GAS verwendet.
+```
+
 3. **How could you use `fprintf` to write output both to `stdout` and to a file instead? Provide example code.**
+```
+fprintf schreibt in Streams wie stdout oder Dateien. Beispiel:
+  ```c
+  #include <stdio.h>
+  int main(void) {
+      FILE *file = fopen("output.txt", "w");
+      if (file == NULL) {
+          printf("Datei konnte nicht geöffnet werden!\n");
+          return 1;
+      }
+      fprintf(stdout, "Ausgabe auf Bildschirm!\n");
+      fprintf(file, "Ausgabe in Datei!\n");
+      fclose(file);
+      return 0;
+  }
+
+```
 
 ---
 
